@@ -86,3 +86,10 @@ declaradas. Só declarei jackson-databind, mas este depende de jackson-core e ja
 que o Maven resolve como dependências transitivas e que acabam dentro do JAR entregue
 O SBOM lista tudo o que faz parte do software (util para detetar vulnerabilidades e verificar licenças)
 O JUnit não aparece porque tem scope test e não faz parte do artefacto final
+### Nota sobre o teste
+A pasta src/test do projeto inicial estava vazia, por isso o passo 2 não podia falhar na fase de testes.
+Criei src/test/java/pt/upt/fleetcheck/FleetServiceTest.java com um teste de fronteira (veículo com exatamente
+10 000 km desde a revisão), que expôs o defeito em FleetService.needsService (> em vez de >=).
+
+### Versão Gradle
+Repositório: https://github.com/tokas10/FleetCheck-Gradle (evidências da parte 8 no README desse projeto)
